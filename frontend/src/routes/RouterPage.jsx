@@ -1,10 +1,11 @@
 import React from 'react'
+import LandingPage from '../pages/LandingPage'
 
 const RouterPage = () => {
   return (
- <div>
-    
- </div>
+    <div>
+        <LandingPage/>
+    </div>
   )
 }
 
