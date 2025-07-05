@@ -21,7 +21,7 @@ const ReviewSection = () => {
             const response = await getReview();
             if (response) {
                 setData(response?.reviews);
-                console.log("Fetched reviews:", response.reviews);
+               console.log("Fetched reviews:", response.reviews);
             }
         } catch (error) {
             console.error("Error fetching review:", error);
@@ -33,51 +33,7 @@ const ReviewSection = () => {
     useEffect(() => {
         fetchReview();
     }, []);
-
-    const reviews = [
-        {
-            title: "How to work with prototype design with adobe xd featuring tools",
-            rating: 5,
-            ratingtext: "5.0 (392 reviews)",
-            author: "2,538 students watched",
-            image: img1,
-        },
-        {
-            title: "Create multiple artboard by using figma prototyping tools development",
-            rating: 5,
-            ratingtext: "4.5 (524 reviews)",
-            author: "3,532 students watched",
-            image: img2,
-        },
-        {
-            title: "Convert your web layout theming easily with sketch zeplin extension",
-            rating: 5,
-            ratingtext: "5.0 (392 reviews)",
-            author: "1,037 students watched",
-            image: img3,
-        },
-        {
-            title: "How to work with prototype design with adobe xd featuring tools",
-            rating: 5,
-            ratingtext: "5.0 (392 reviews)",
-            author: "2,538 students watched",
-            image: img1,
-        },
-        {
-            title: "Create multiple artboard by using figma prototyping tools development",
-            rating: 5,
-            ratingtext: "4.5 (524 reviews)",
-            author: "3,532 students watched",
-            image: img2,
-        },
-        {
-            title: "Convert your web layout theming easily with sketch zeplin extension",
-            rating: 5,
-            ratingtext: "5.0 (392 reviews)",
-            author: "1,037 students watched",
-            image: img3,
-        },
-    ];
+    console.log("Fetched data:", data);
 
 
     return (
@@ -103,27 +59,28 @@ const ReviewSection = () => {
                             1024: { slidesPerView: 3 },
                         }}
                     >
-                        {reviews.map((item, index) => (
+                        {data.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="rounded-b-lg border border-gray-100 hover:shadow-[0px_20px_30px_rgba(0,0,0,0.05)] duration-500 transition-all bg-white">
                                     <img
-                                        src={item.image}
+                                        src={img1}
                                         alt={item.title}
                                         className="w-full h-48 object-cover"
                                     />
+                                    
                                     <div className="p-4 flex flex-col gap-2">
                                         <div className="text-sm">
                                             <span className="text-yellow-400 text-lg">
-                                                {"★".repeat(item.rating)}
+                                                {"★".repeat(item.stars)}
                                             </span>{" "}
-                                            {item.ratingtext}
+                                            {item.stars}.0 ({item.studentsWatched} reviews)
                                         </div>
                                         <h3 className="text-sm font-semibold">
                                             {item.title}
                                         </h3>
                                         <p className="text-sm text-gray-500 flex items-center gap-1">
                                             <IoMdEye />
-                                            {item.author}
+                                            {item.studentsWatched} students watched
                                         </p>
                                     </div>
                                 </div>
@@ -133,9 +90,9 @@ const ReviewSection = () => {
                 </div>
             </section>
 
-            {/* {loading && (
+            {loading && (
                 <div className="text-center py-10">Loading reviews...</div>
-            )} */}
+            )}
         </div>
     );
 };

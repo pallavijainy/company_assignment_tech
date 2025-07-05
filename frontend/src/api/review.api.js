@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const backendConfig = {
-  base: "http://10.176.221.250:3000/api",
-  origin: "http://10.176.221.250:3000/", 
+  base: "https://pallavi-code-backend-4.onrender.com/api",
+  origin: "https://pallavi-code-backend-4.onrender.com/", 
 };
 
 const Axios = axios.create({
