@@ -9,6 +9,7 @@ import FAQ from '../components/FAQ'
 import CallToAction from '../components/CallToAction'
 import Footer from '../components/Footer'
 import TutorialHighlightSection from '../components/TutorialHighlightSection'
+import HowItWorks from '../components/HowItWorks'
 
 const LandingPage = () => {
     return (
@@ -18,11 +19,12 @@ const LandingPage = () => {
                 <ReviewSection />
                 <StatsSection />
                 <PopularCourses />
+                <HowItWorks />
                 <PricingPlans />
-                <TutorialHighlightSection/>
+                <TutorialHighlightSection />
                 <FAQ />
-                <CallToAction/>
-                <Footer/>
+                <CallToAction />
+                <Footer />
             </div>
         </div>
     )

@@ -46,7 +46,7 @@ const courses = [
 
 const PopularCourses = () => {
     return (
-        <section className="lg:px-20 bg-white">
+        <section className="lg:px-20 py-10 bg-white">
             <p className="uppercase text-sm text-center text-[#EF9E48]">Quality features</p>
             <h2 className="text-3xl font-bold text-center mb-12">Popular Designing Course</h2>
 

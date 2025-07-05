@@ -133,9 +133,9 @@ const ReviewSection = () => {
                 </div>
             </section>
 
-            {loading && (
+            {/* {loading && (
                 <div className="text-center py-10">Loading reviews...</div>
-            )}
+            )} */}
         </div>
     );
 };
